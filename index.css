@@ -1,0 +1,79 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  font-family: "Poppins" , sans-serif;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background-color: #ffb037 ;
+}
+
+html{
+  --fontWeight : bold;
+}
+
+.timer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+  backface-visibility: hidden;
+  transform: rotateX(180deg);
+}
+
+
+.timer1{
+  transform:  rotateX(0deg);
+  animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+  0%{
+    transform: rotateZ(360deg);
+  }
+  50%{
+    transform: scale(0.5);
+  }
+  75%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: scale(0.5);
+  }
+
+
+}
+ input{
+   width: 150px;
+   height: 40px;
+ }
+
+
+h1{
+font-weight: var(--fontWeight);
+
+font-size: 3rem;
+}
+.countdown{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.counter-l{
+  margin: 20px;
+  text-align: center;
+}
+.counter-l span {
+  font-size: 0.7rem;
+}
+
+.big-text{
+  font-weight: var(--fontWeight);
+  font-size: 4rem;
+  line-height: 1;
+  margin: 0.2rem;
+}
