@@ -54,7 +54,6 @@ document.getElementById("start").addEventListener('click',() =>{
         const seconds = Math.floor(totalSeconds)%60;
 
         if(days == 0 && hours == 0 && minutes == 0 && seconds == 0){
-          
           var audio = new Audio('Positive-game-notification.mp3');
           audio.play();
           colorchange();
