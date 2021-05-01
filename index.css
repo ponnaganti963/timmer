@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 body{
   margin: 0;
   padding: 0;
@@ -15,6 +18,46 @@ html{
   --fontWeight : bold;
 }
 
+.inputing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.typing h2{
+  font-size: 5rem;
+  overflow: hidden;
+  border-right: 2px solid;
+  white-space: nowrap;
+  font-family: 'New Tegomin', serif;
+  letter-spacing: 12px;
+  animation:  blink 0.8s  infinite , typing 1.5s steps(50, start) alternate infinite;
+}
+
+@keyframes typing {
+  from{
+    width: 0;
+  }to{
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to{
+    border-color: transparent;
+  }
+  25%{
+    border-color:  white;
+  }
+  50%{
+    border-color: red;
+  }
+  75%{
+    border-color: blue;
+  }
+}
+
 .timer{
   display: flex;
   justify-content: center;
@@ -28,21 +71,21 @@ html{
 
 .timer1{
   transform:  rotateX(0deg);
-  animation: spin 1s ease-in-out;
+  animation: spin 1s ease-in-out ;
 }
 
 @keyframes spin {
   0%{
-    transform: rotateZ(360deg);
+    transform: scale(0.5) rotate3d(1, 1, 1, 45deg);
   }
+  /* 50%{
+    transform: ;
+  } */
   50%{
-    transform: scale(0.5);
-  }
-  75%{
-    transform: rotateZ(0deg);
+    transform: scale(0.5) rotate3d(-1, -1, -1, 45deg);
   }
   100%{
-    transform: scale(0.5);
+    transform: rotate3d(0,0,0,0deg);
   }
 
 
@@ -55,8 +98,21 @@ html{
 
 h1{
 font-weight: var(--fontWeight);
-
+font-family: 'Permanent Marker', cursive;
 font-size: 3rem;
+
+}
+
+.scaling{
+  animation: scaling 1s ease-in-out infinite;
+}
+@keyframes scaling {
+  from{
+    transform: scale(0.6);
+  }
+  to{
+    transform: scale(1);
+  }
 }
 .countdown{
   display: flex;
@@ -64,7 +120,7 @@ font-size: 3rem;
 }
 
 .counter-l{
-  margin: 20px;
+  margin: 30px;
   text-align: center;
 }
 .counter-l span {
