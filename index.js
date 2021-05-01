@@ -38,8 +38,11 @@ document.getElementById("start").addEventListener('click',() =>{
       alert("Enter Valid date");
     }else{
        var rot = document.querySelector('.timer');
+       var h = document.querySelector('h1');
+       h.classList.toggle('scaling');
        rot.classList.toggle('timer1');
-
+       var hiding = document.querySelector('.inputing');
+       hiding.style.display = "none";
       countdown();
      var i =  setInterval(countdown ,1000);
 
@@ -54,13 +57,21 @@ document.getElementById("start").addEventListener('click',() =>{
         const seconds = Math.floor(totalSeconds)%60;
 
         if(days == 0 && hours == 0 && minutes == 0 && seconds == 0){
-          var audio = new Audio('Positive-game-notification.mp3');
+          h.classList.remove('scaling');
+          var audio = new Audio('timeout.mp3');
           audio.play();
+          audioloop();
+          setInterval(audioloop , 18000);
+          function audioloop(){
+            audio.loop = true;
+
+          }
           colorchange();
           setInterval(colorchange , 300);
           function colorchange(){
-            var h = document.querySelector('body');
-            h.style.backgroundColor = colors[Math.floor((Math.random()*15) +1)] ;
+            var h = document.querySelector('h1');
+            secl.style.color = "black";
+            h.style.color = colors[Math.floor((Math.random()*15) +1)] ;
             clearInterval(i);
 
           }
